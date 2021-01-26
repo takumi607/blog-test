@@ -17,7 +17,7 @@ if($conn->connect_error){
 </head>
 
 <body>
-	<form action="blog_test.php" method="post">
+	<form action="next.php" method="post">
  Title: <br><input type="text" name="title" /><br>
  Input your text:<br><textarea  class="text_body" name="text" rows="8" cols="80">Hello world</textarea><br>
  <br><input type="submit" />

@@ -41,7 +41,7 @@ if($result->num_rows > 0){
 </head>
 
 <body>
-  <form action="practice.php" method="post">
+  <form action="home.php" method="post">
  <input type="submit" value="back"/>
 </form>
 </body>
