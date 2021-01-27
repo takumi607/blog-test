@@ -15,9 +15,23 @@ if($conn->connect_error){
 	<title>title</title>
   <link rel="stylesheet" href="test_blog.css">
 </head>
-
 <body>
-	<form action="next.php" method="post">
+  <div class="header">
+    <div class="header-logo">
+      <li>茂木's blog</li>
+    </div>
+  </div>
+  <div class="sidebar">
+    <ul>
+    	<li><a class="active" href="home.php">post a blog</a></li>
+    	<li><a href="next.php">watch blogs</a></li>
+    </ul>
+  </div>
+  <div class="main">
+
+  </div>
+
+	<!--<form action="next.php" method="post">
  Title: <br><input type="text" name="title" /><br>
  Input your text:<br><textarea  class="text_body" name="text" rows="8" cols="80">Hello world</textarea><br>
  <br><input type="submit" />
@@ -25,7 +39,7 @@ if($conn->connect_error){
 
 
 Recent:<br>
-<?php
+
 $sql = "SELECT id , title ,sentence,reg_data FROM article ORDER by id DESC";//WHERE条件にあった物を探す　ORDERで指定した順に並べる
 $result = $conn->query($sql);
 if($result->num_rows > 0){
@@ -35,7 +49,7 @@ if($result->num_rows > 0){
   }
 }else{
   echo "0".$result->error;}
-?>
+-->
 </body>
 
 </html>
