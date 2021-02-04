@@ -40,31 +40,63 @@ date_default_timezone_set("Asia/Tokyo");*/
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <title>blog</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <title>blog</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand px-3" href="">Mogi's Blog</a>
-      <ul class="navbar-nav d-none d-md-none d-lg-flex px-3 float-right">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link " href="#">Sign Out</a>
-        </li>
-      </ul>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </nav>
+    <header>
+      <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Features</a>
+                <a class="nav-item nav-link" href="#">Pricing</a>
+                <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </div>
+            </div>
+          </nav>-->
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand px-3" href="home.php"><h4>Mogi's Blog</h4></a>
+        <ul class="navbar-nav px-3z">
+          <li class="nav-item ">
+            <a class="nav-link d-none d-lg-block" href="#">Sign Out</a>
+          </li>
+        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                      <li class="nav-item">
+                        <a class="nav-link active d-block d-lg-none" href="home.php">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link d-block d-lg-none" href="next.php">Post blog</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link d-block d-lg-none" href="#">Sign out</a>
+                      </li>
+
+                    </ul>
+              </div>
+      </nav>
+
+    </header>
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block sidebar p-0">
+        <nav class="col-md-2 d-none d-lg-block sidebar p-2">
           <div class="sidebar-sticky">
-            <ul class="nav flex-column bg-light">
-              <li class="nav-item border"><a class="nav-link active"href="home.php">Home</a></li>
-              <li class="nav-item border"><a class="nav-link active"href="next.php">Post blog</a></li>
+            <ul class="nav flex-column ">
+              <li class="nav-item"><a class="nav-link text-dark"href="home.php"><h5>Home</h5></a></li>
+              <li class="nav-item"><a class="nav-link  text-muted"href="next.php"><h5>Post blog</h5></a></li>
             </ul>
           </div>
         </nav>
@@ -98,21 +130,34 @@ date_default_timezone_set("Asia/Tokyo");*/
         </div>
       </div>
     </div>
-    <div class="footer text-primary">
+    <div class="footer bg-dark" style="height:200px">
+      <div class="row h-100">
+        <div class="col text-white">
+          <h1>こんにちは</h1>
 
+        </div>
+        <div class="col text-white">
+          <h1>こんにちは</h1>
+
+        </div>
+        <div class="col text-white">
+          <h1>こんにちは</h1>
+
+        </div>
+
+      </div>
     </div>
-
-
-
     <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+      <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+      <!--
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+      -->
   </body>
 </html>
