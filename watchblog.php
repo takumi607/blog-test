@@ -8,7 +8,7 @@ if($conn->connect_error){
   echo "Error: ".$conn->error;
 }
 
-
+$id = htmlspecialchars($_GET['id']);
 
 /*$sql = "INSERT INTO article(title,sentence)
 VALUES('$title','$text')";
@@ -47,7 +47,7 @@ else{
                           <a class="nav-link  d-block d-lg-none" href="home.php">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link active d-block d-lg-none" href="next.php">Post blog</a>
+                          <a class="nav-link  d-block d-lg-none" href="next.php">Post blog</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link d-block d-lg-none" href="#">Sign out</a>
@@ -64,28 +64,35 @@ else{
             <div class="sidebar-sticky">
               <ul class="nav flex-column ">
                 <li class="nav-item "><a class="nav-link  text-muted"href="home.php"><h5>Home</h5></a></li>
-                <li class="nav-item "><a class="nav-link active text-dark"href="next.php"><h5>Post blog</h5></a></li>
+                <li class="nav-item "><a class="nav-link  text-muted"href="next.php"><h5>Post blog</h5></a></li>
               </ul>
             </div>
       </nav>
         <div id="main" class="col ">
           <div class="row justify-content-center">
-            <form class="col-11 p-2 bg-light m-4" action="home.php" method="post">
-              <div class="form-group p-1">
-                <input type="text" class="form-control" name="input_title" placeholder="Input title">
+            <div id="blog">
+              <div class="col p-4">
+                <?php
+                  $sql = "SELECT id , title ,sentence,reg_data FROM article WHERE id = $id";//WHERE条件にあった物を探す　ORDERで指定した順に並べる
+                  $result = $conn->query($sql);
+                  if($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                      ?>
+                    <img class="col-8 col-md-7 col-lg-6 d-block mx-auto" src="sample.png" alt="Card image cap">
+                      <h4 class="text-center"><?php if (!$row['title']) {
+                        echo "No title";
+                      }else {echo $row['title'];}?></h4>
+                      <h6 class="text-muted"><?php echo $row['reg_data'];?></h6>
+                      <p class="mt-4"><?php if (!row['sentence']) {
+                        echo "No title";
+                      }else {
+                        echo $row['sentence'];
+                      }?></p>
+                      <?php  }
+                        }else{?>
+                      <h3><?php echo "No data in database.".$result->error;}?></h3>
               </div>
-              <div class="form-group p-1">
-                <textarea class="form-control" style="height:600px" name="input_text" rows="3" placeholder="Input your text"></textarea>
-              </div>
-              <div class="text-right">
-
-
-
-                <input class="btn btn-secondary" type="submit" value="Upload">
-              </div>
-            </form>
-
-
+            </div>
           </div>
         </div>
       </div>
@@ -93,7 +100,7 @@ else{
     <div class="footer mt-5 py-4 bg-dark">
       <div class="row ">
         <div class=" text-white mx-4 ">
-          <img src="smile.png"class="img-fluid" style="height:100px;" alt="user icon">
+          <img src="smile.png" class="img-fluid" style="height:100px;" alt="user icon">
         </div>
         <div class="text-white ">
             <h5>Takumi Mogi</h5>
@@ -101,9 +108,9 @@ else{
             <p>example@gmail.com</p>
         </div>
         <div class="text-white">
-          <a href="https://twitter.com/home" target="_blank"><i class="fab fa-twitter fa-3x"></i></a>
-          <a href="https://github.com/" target="_blank"><i class="fab fa-github fa-3x"></i></a>
-          <a href="https://www.linkedin.com/feed/" target="_blank">  <i class="fab fa-linkedin fa-3x"></i></a>
+          <a href="https://twitter.com/home" target="_blank" class="m-1"><i class="fab fa-twitter fa-3x"></i></a>
+          <a href="https://github.com/" target="_blank" class="m-1"><i class="fab fa-github fa-3x"></i></a>
+          <a href="https://www.linkedin.com/feed/" target="_blank" class="m-1">  <i class="fab fa-linkedin fa-3x"></i></a>
         </div>
 
       </div>

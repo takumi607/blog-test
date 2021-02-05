@@ -19,7 +19,28 @@ if($title||$text){
     echo "Failed: \n".$conn->error;}
 }
 
+/*  <div class="col-fluid   p-4">
+    <?php
+      $sql = "SELECT id , title ,sentence,reg_data FROM article ORDER by id DESC";//WHERE条件にあった物を探す　ORDERで指定した順に並べる
+      $result = $conn->query($sql);
+      if($result->num_rows > 0){
+        while($row = $result->fetch_assoc()){?>
+    <ul class="border border-2 p-2 bg-light">
+      <h3 id="Title"><?php if (!$row['title']) {
+        echo "No title";
+      }else {echo $row['title'];}?></h3>
+      <h5 class="text-muted"><?php echo $row['reg_data'];?></h5>
+      <p id="text"><?php if (!$row['sentence']) {
+        echo "No text.";
+      }else{echo $row['sentence'];}?></p>
 
+    </ul>
+  <?php  }
+    }else{?>
+    <ul class="border border-2 p-2 bg-light">
+    <h3><?php echo "No data in database.".$result->error;}?></h3>
+      </ul>
+  </div>
 
 /*$title = array();
 $text = array();
@@ -102,47 +123,44 @@ date_default_timezone_set("Asia/Tokyo");*/
         </nav>
         <div id="main" class="col">
           <div class="row">
-
-            <div class="col-fluid   p-4">
-              <?php
-                $sql = "SELECT id , title ,sentence,reg_data FROM article ORDER by id DESC";//WHERE条件にあった物を探す　ORDERで指定した順に並べる
-                $result = $conn->query($sql);
-                if($result->num_rows > 0){
-                  while($row = $result->fetch_assoc()){?>
-              <ul class="border border-2 p-2 bg-light">
-                <h3 id="Title"><?php if (!$row['title']) {
-                  echo "No title";
-                }else {echo $row['title'];}?></h3>
-                <h5 class="text-muted"><?php echo $row['reg_data'];?></h5>
-                <p id="text"><?php if (!$row['sentence']) {
-                  echo "No text.";
-                }else{echo $row['sentence'];}?></p>
-
-              </ul>
-            <?php  }
-              }else{?>
-              <ul class="border border-2 p-2 bg-light">
-              <h3><?php echo "No data in database.".$result->error;}?></h3>
-                </ul>
-            </div>
-
-          </div>
+            <?php
+              $sql = "SELECT id , title ,sentence,reg_data FROM article ORDER by id DESC";//WHERE条件にあった物を探す　ORDERで指定した順に並べる
+              $result = $conn->query($sql);
+              if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                  $id=$row['id']?>
+            <a href="watchblog.php?id=<?=$id?>" class="col-sm-6 col-lg-4" >
+              <div class="card border-0  mx-2 my-2" style="width: auto;">
+                <img class="card-img-top" style="height:300px" src="sample.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title "><?php if (!$row['title']) {
+                    echo "No title";
+                  }else {echo $row['title'];}?></h5>
+                  <h6 class="text-muted tex"><?php echo $row['reg_data'];?></h6>
+                </div>
+              </div>
+            </a>
+          <?php  }
+            }else{?>
+              <h3><?php echo "No data in database.".$result->error;}?></h3><!--no data in database-->
+          </div><!--row-->
         </div>
       </div>
     </div>
-    <div class="footer bg-dark" style="height:200px">
-      <div class="row h-100">
-        <div class="col text-white">
-          <h1>こんにちは</h1>
-
+    <div class="footer mt-5 py-4 bg-dark">
+      <div class="row ">
+        <div class=" text-white mx-4 ">
+          <img src="smile.png"class="img-fluid" style="height:100px;" alt="user icon">
         </div>
-        <div class="col text-white">
-          <h1>こんにちは</h1>
-
+        <div class="text-white ">
+            <h5>Takumi Mogi</h5>
+            <p>0900123456</p>
+            <p>example@gmail.com</p>
         </div>
-        <div class="col text-white">
-          <h1>こんにちは</h1>
-
+        <div class="text-white">
+          <a href="https://twitter.com/home" target="_blank"><i class="fab fa-twitter fa-3x"></i></a>
+          <a href="https://github.com/" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+          <a href="https://www.linkedin.com/feed/" target="_blank">  <i class="fab fa-linkedin fa-3x"></i></a>
         </div>
 
       </div>
@@ -152,7 +170,7 @@ date_default_timezone_set("Asia/Tokyo");*/
       <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-
+      <script src="https://kit.fontawesome.com/d776b4cbc2.js" crossorigin="anonymous"></script>
       <!-- Option 2: Separate Popper and Bootstrap JS -->
       <!--
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
